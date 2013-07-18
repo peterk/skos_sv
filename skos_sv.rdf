@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+  xml:base="http://www.w3.org/2004/02/skos/core"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:dct="http://purl.org/dc/terms/"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/">
+
+  <!--
+  *************************************
+  * SWEDISH ANNOTATIONS FOR SKOS CORE *
+  *************************************
+  -->
+
+  <!--
+    Description of these annotations.
+  -->
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core_sv">
+    <rdfs:label xml:lang="en">Swedish annotations for the SKOS Core Vocabulary</rdfs:label>
+    <dc:creator>Peter Krantz</dc:creator>
+    <dc:contributor>Members of the public-esw-thes@w3.org mailing list.</dc:contributor>
+		<dct:modified>2013-07-14</dct:modified>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+    <dct:hasVersion rdf:resource="http://www.w3.org/2004/02/skos/core/annotations/sv/2013-07-14.rdf"/>
+  </rdf:Description>
+
+  <!--
+    Description of this version of the annotations.
+  -->
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core/annotations/sv/2013-07-14.rdf">
+    <rdfs:label xml:lang="en">Swedish annotations for the SKOS Core Vocabulary, 2013-07-14 version</rdfs:label>
+    <dc:date>2013-07-14</dc:date>
+    <dct:isVersionOf rdf:resource="http://www.w3.org/2004/02/skos/core_sv"/>
+  </rdf:Description>
+
+  <!--
+    **********************
+    Begin the annotations.
+    **********************
+  -->
+
+	<rdf:Description rdf:about="">
+		<dc:title xml:lang="sv">SKOS Core-vokabulär</dc:title>
+    <dc:description xml:lang="sv">En RDF-vokabulär för att beskriva grundläggande struktur och innehåll i begreppsmodeller såsom tesaurusar, klassifikationsscheman, ämnesordsförteckningar, taxonomier, folksonomier och andra typer av kontrollerade ordlistor. Omfattar även sådana begreppsmodeller som finns inlemmade i ordlistor och terminologier.</dc:description>
+	</rdf:Description>
+
+  <rdfs:Class rdf:ID="ConceptScheme">
+    <rdfs:label xml:lang="sv">begreppsmodell</rdfs:label>
+    <skos:definition xml:lang="sv">En uppsättning begrepp som även kan innehålla beskrivningar av deras inbörde relationer.</skos:definition>
+    <rdfs:comment xml:lang="sv">Tesaurusar, klassifikationsscheman, ämnesordsförteckningar, taxonomier, folksonomier och andra typer av kontrollerade ordlistor är samtliga exempel på begrepssystem. Begreppsmodeller kan även vara inlemmade i ordlistor och terminologier.</rdfs:comment>
+    <rdfs:comment xml:lang="sv">En begreppsmodell kan även designas så att den innehåller begrepp från andra källor.</rdfs:comment>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:ID="Concept">
+    <rdfs:label xml:lang="sv">Begrepp</rdfs:label>
+    <skos:definition xml:lang="sv">En abstrakt idé eller föreställning om något. Kunskapsenhet.</skos:definition>
+  </rdfs:Class>
+
+  <rdf:Property rdf:ID="hasTopConcept">
+    <rdfs:label xml:lang="sv">har huvudbegrepp</rdfs:label>
+    <skos:definition xml:lang="sv">Huvudsakligt begrepp i en begreppsmodell.</skos:definition>
+  </rdf:Property>
+
+	<!-- Basic properties of concepts -->
+
+  <rdf:Property rdf:ID="inScheme">
+    <rdfs:label xml:lang="sv">ingår i modell</rdfs:label>
+    <skos:definition xml:lang="sv">En begreppsmodell i vilket begreppet ingår.</skos:definition>
+    <rdfs:comment xml:lang="sv">Ett begrepp kan ingå i flera begreppsmodeller.</rdfs:comment>
+  </rdf:Property>
+
+  <rdf:Property rdf:ID="prefLabel">
+    <rdfs:label xml:lang="sv">föredragen term</rdfs:label>
+    <skos:definition xml:lang="sv">Den föredragna termen för en resurs på ett enskilt språk.</skos:definition>
+    <rdfs:comment xml:lang="sv">Två begrepp i samma begreppsmodell får inte ha samma värde i skos:prefLabel för ett enskilt språk.</rdfs:comment>
+  </rdf:Property>
+
+  <rdf:Property rdf:ID="altLabel">
+    <rdfs:label xml:lang="sv">alternativ term</rdfs:label>
+    <skos:definition xml:lang="sv">En alternativ term för en resurs.</skos:definition>
+    <rdfs:comment xml:lang="sv">Akronymer, förkortningar, alternativa stavningar och oregelbundna plural- och singularformer kan ingå bland alternativa termer för ett begrepp. Felstavningar anges vanligen som dolda termer (se skos:hiddenLabel).</rdfs:comment>
+  </rdf:Property>
+
+  <rdf:Property rdf:ID="hiddenLabel">
+    <rdfs:label xml:lang="sv">dold term</rdfs:label>
+    <skos:definition xml:lang="sv">En term som bör döljas när man visar en resurs men som ska ingå som underlag för fritextsökningar.</skos:definition>
+  </rdf:Property>
+
+  <rdf:Property rdf:ID="symbol">
+    <rdfs:label xml:lang="sv">symbol</rdfs:label>
+    <skos:definition xml:lang="sv">En bild som utgör en icke-språklig begreppsrepresentation för resursen.</skos:definition>
+    <rdfs:comment xml:lang="sv">Denna egenskap motsvarar ungefär rdfs:label men används för att märka resurser med bilder som är möjliga att hämta snarare än RDF-literaler.</rdfs:comment>
+  </rdf:Property>
+
+  <rdf:Property rdf:ID="prefSymbol">
+    <rdfs:label xml:lang="sv">föredragen symbol</rdfs:label>
+    <skos:definition xml:lang="sv">Den föredragna symbolen för en resurs.</skos:definition>
+    <rdfs:comment xml:lang="sv">Två begrepp i samma begreppsmodell får inte ha samma värde i skos:prefSymbol.</rdfs:comment>
+  </rdf:Property>
+
+  <rdf:Property rdf:ID="altSymbol">
+    <rdfs:label xml:lang="sv">alternativ symbol</rdfs:label>
+    <skos:definition xml:lang="sv">En alternativ symbol för en resurs.</skos:definition>
+    <skos:example rdf:resource="http://www.w3.org/2004/02/skos/core/examples/altSymbol.rdf.xml"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:ID="semanticRelation">
+    <rdfs:label xml:lang="sv">semantiskt relaterat</rdfs:label>
+    <skos:definition xml:lang="sv">Ett relaterat begrepp.</skos:definition>
+    <rdfs:comment xml:lang="sv">Denna egenskap ska inte användas direkt. Den är en abstrakt egenskap för de egenskaper som beskriver inbördes förhållanden mellan begrepp.</rdfs:comment>
+  </rdf:Property>
+
+  <!-- Basic semantic relation properties -->
+
+  <rdf:Property rdf:ID="broader">
+    <rdfs:label xml:lang="sv">har överordnat begrepp</rdfs:label>
+    <skos:definition xml:lang="sv">Ett begrepp som är mer generiskt.</skos:definition>
+    <rdfs:comment xml:lang="sv">Överordnade begrepp visas vanligen som föräldrar i ett begreppsdiagram (träd).</rdfs:comment>
+  </rdf:Property>
+
+  <rdf:Property rdf:ID="narrower">
+    <rdfs:label xml:lang="sv">har underordnat begrepp</rdfs:label>
+    <skos:definition xml:lang="sv">Ett begrepp som har en mer specifik definition.</skos:definition>
+    <rdfs:comment xml:lang="sv">Underordnade begrepp visas vanligen som barn i ett begreppsdiagram (träd).</rdfs:comment>
+  </rdf:Property>
+
+  <rdf:Property rdf:ID="related">
+    <rdfs:label xml:lang="sv">relaterat till</rdfs:label>
+    <skos:definition xml:lang="sv">Ett begrepp till vilket det finns en associativ begreppsrelation.</skos:definition>
+  </rdf:Property>
+
+  <rdf:Property rdf:ID="note">
+    <rdfs:label xml:lang="sv">anmärkning</rdfs:label>
+    <skos:definition xml:lang="sv">En allmän anmärkning i vilket syfte som helst.</skos:definition>
+    <rdfs:comment xml:lang="sv">Denna egenskap kan användas direkt eller som en överordnad egenskap för mer specifika anmärkningstyper.</rdfs:comment>
+  </rdf:Property>
+
+  <rdf:Property rdf:ID="definition">
+    <rdfs:label xml:lang="sv">definition</rdfs:label>
+    <skos:definition xml:lang="sv">En beskrivning eller förklaring av ett begrepps innebörd.</skos:definition>
+  </rdf:Property>
+
+  <rdf:Property rdf:ID="scopeNote">
+    <rdfs:label xml:lang="sv">information om användning</rdfs:label>
+    <skos:definition xml:lang="sv">Uppgifter som förtydligar betyldelsen av ett begrepp.</skos:definition>
+  </rdf:Property>
+
+  <!-- Description of skos:example -->
+
+  <rdf:Property rdf:ID="example">
+    <rdfs:label xml:lang="sv">exempel</rdfs:label>
+    <skos:definition xml:lang="sv">Exempel på hur ett begrepp kan användas</skos:definition>
+  </rdf:Property>
+
+  <!-- Description of skos:historyNote -->
+
+  <rdf:Property rdf:ID="historyNote">
+    <rdfs:label xml:lang="sv">historisk anmärkning</rdfs:label>
+    <skos:definition xml:lang="sv">Information om tidigare status/användning/innebörd av ett begrepp.</skos:definition>
+  </rdf:Property>
+
+  <rdf:Property rdf:ID="editorialNote">
+    <rdfs:label xml:lang="sv">redaktionell anmärkning</rdfs:label>
+    <skos:definition xml:lang="sv">Information avsedd för redaktör, översättare elleter förvaltare av begreppsmodellen.</skos:definition>
+  </rdf:Property>
+
+  <rdf:Property rdf:ID="changeNote">
+    <rdfs:label xml:lang="sv">förändringsanmärkning</rdfs:label>
+    <skos:definition xml:lang="sv">Information om förändringar av ett begrepp.</skos:definition>
+  </rdf:Property>
+
+  <rdfs:Class rdf:ID="Collection">
+    <rdfs:label xml:lang="sv">Samling</rdfs:label>
+    <skos:definition xml:lang="sv">En meningsfull samling begrepp.</skos:definition>
+    <rdfs:comment xml:lang="sv">Namngivna samlingar kan användas ihop med semantiska relationer som t.ex. skos:narrower när man vill presentera en uppsättning begrepp under en "nodetikett" i en hierarki.</rdfs:comment>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:ID="OrderedCollection">
+    <rdfs:label xml:lang="sv">Ordnad samling</rdfs:label>
+    <skos:definition xml:lang="sv">En ordnat samling begrepp där både ordningen och grupperingen av begrepp har betydelse.</skos:definition>
+    <rdfs:comment xml:lang="sv">En ordnad samling kan användas ihop med semantiska relationer när man vill att en samling begrepp ska presenteras i en viss ordning, eventuellt tillsammans med presentation under en "nodetikett".</rdfs:comment>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:ID="CollectableProperty">
+    <rdfs:label xml:lang="sv">Samlande egenskap</rdfs:label>
+    <skos:definition xml:lang="sv">En egenskap som kan användas tillsamans med skos:Collection.</skos:definition>
+    <rdfs:comment xml:lang="sv">Följande gäller för denna egenskap: [(?x ?p ?c) (?c skos:member ?y) (?p rdf:type skos:CollectableProperty) medför att (?x ?p ?y)]</rdfs:comment>
+  </rdfs:Class>
+
+  <rdf:Property rdf:ID="member">
+    <rdfs:label xml:lang="sv">medlem</rdfs:label>
+    <skos:definition xml:lang="sv">En medlem i en samling.</skos:definition>
+  </rdf:Property>
+
+  <rdf:Property rdf:ID="memberList">
+    <rdfs:label xml:lang="sv">medlemsförteckning</rdfs:label>
+    <skos:definition xml:lang="sv">En RDF-lista som innehåller medlemmarna i en ordnad samling.</skos:definition>
+    <rdfs:comment xml:lang="sv">Följande regel gäller för denna egenskap: [(?c skos:memberList ?l) elementOfList(?e,?l) medför att (?c skos:member ?e)]</rdfs:comment>
+  </rdf:Property>
+
+  <rdf:Property rdf:ID="subject">
+    <rdfs:label xml:lang="sv">har ämne</rdfs:label>
+    <skos:definition xml:lang="sv">Ett begrepp som är ämnet för resursen.</skos:definition>
+    <rdfs:comment xml:lang="sv">Följande regel kan appliceras för denna egenskap: [(?d skos:subject ?x)(?x skos:broader ?y) medför att (?d skos:subject ?y)]</rdfs:comment>
+  </rdf:Property>
+
+  <rdf:Property rdf:ID="isSubjectOf">
+    <rdfs:label xml:lang="sv">är ämnet för</rdfs:label>
+    <skos:definition xml:lang="sv">En resurs för vilken begreppet är ämnet.</skos:definition>
+  </rdf:Property>
+
+  <rdf:Property rdf:ID="primarySubject">
+    <rdfs:label xml:lang="sv">har huvudsakligt ämne</rdfs:label>
+    <skos:definition xml:lang="sv">Ett begrepp som är det huvudsakliga ämnet för resursen.</skos:definition>
+    <rdfs:comment xml:lang="sv">En resurs kan bara ha ett huvudsakligt ämne per begreppsmodell.</rdfs:comment>
+  </rdf:Property>
+
+  <rdf:Property rdf:ID="isPrimarySubjectOf">
+    <rdfs:label xml:lang="sv">är huvudsakligt ämne för</rdfs:label>
+    <skos:definition xml:lang="sv">En resurs för vilken begreppet är huvudsakligt ämne.</skos:definition>
+  </rdf:Property>
+
+  <rdf:Property rdf:ID="subjectIndicator">
+    <rdfs:label xml:lang="sv">ämnesangivare</rdfs:label>
+    <skos:definition xml:lang="sv">En ämnesangivare för ett begrepp. [Begreppet "ämnesangivare" definieras här med hänvisning till den senaste definitionen från OASIS Published Subjects Technical Committee.]</skos:definition>
+    <rdfs:comment xml:lang="sv">Denna egenskap gör det möjligt att använda ämnesagnivare för begrepssidentifiering istället för eller utöver direkt tildelade URI:er.</rdfs:comment>
+  </rdf:Property>
+
+</rdf:RDF>

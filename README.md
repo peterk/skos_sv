@@ -1,4 +1,4 @@
-skos_sv
-=======
+Swedish translation of SKOS Core
+================================
 
-Swedish translation of SKOS core
+This is a first draft of a translation of SKOS core to swedish. Add issues or change it as you like.
