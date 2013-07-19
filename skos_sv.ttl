@@ -1,0 +1,285 @@
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+skos:altLabel a owl:AnnotationProperty,
+     rdf:Property;
+   rdfs:label "alternativ term"@sv;
+   rdfs:comment "Omfattningen av skos:altLabel är klassen RDF plain literals."@sv,
+     "skos:prefLabel, skos:altLabel och skos:hiddenLabel är parvis åtskilda egenskaper."@sv;
+   rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core>;
+   rdfs:subPropertyOf rdfs:label;
+   skos:definition "En alternativ term för en resurs."@sv;
+   skos:example "Akronymer, förkortningar, alternativa stavningar och oregelbundna plural- och singularformer kan ingå bland alternativa termer för ett begrepp. Felstavningar anges vanligen som dolda termer (se skos:hiddenLabel)."@sv .
+
+skos:changeNote a owl:AnnotationProperty,
+     rdf:Property;
+   rdfs:label "förändringsanmärkning"@sv;
+   rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core>;
+   rdfs:subPropertyOf skos:note;
+   skos:definition "Anmärkning om förändringar av ett begrepp."@sv .
+
+skos:editorialNote a owl:AnnotationProperty,
+     rdf:Property;
+   rdfs:label "redaktionell anmärkning"@sv;
+   rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core>;
+   rdfs:subPropertyOf skos:note;
+   skos:definition "Information avsedd för redaktör, översättare elleter förvaltare av begreppsmodellen."@sv .
+
+skos:exactMatch a owl:ObjectProperty,
+     owl:SymmetricProperty,
+     owl:TransitiveProperty,
+     rdf:Property;
+   rdfs:label "har exakt motsvarande begrepp"@sv;
+   rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core>;
+   rdfs:subPropertyOf skos:closeMatch;
+   skos:definition "skos:exactMatch används för att koppla samman två begrepp där båda begreppen med största sannolikhet kan användas på samma sätt i informationsinsamlingssystem. skos:exactMatch är en transitiv egenskap och är en underliggande egenskap till skos:closeMatch."@sv .
+
+skos:hiddenLabel a owl:AnnotationProperty,
+     rdf:Property;
+   rdfs:label "dold term"@sv;
+   rdfs:comment "Omfattningen av skos:altLabel är klassen RDF plain literals."@sv,
+     "skos:prefLabel, skos:altLabel och skos:hiddenLabel är parvis åtskilda egenskaper."@sv;
+   rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core>;
+   rdfs:subPropertyOf rdfs:label;
+   skos:definition "En term som bör döljas när man presenterar en resurs men som ska ingå som underlag för fritextsökningar."@sv .
+
+skos:historyNote a owl:AnnotationProperty,
+     rdf:Property;
+   rdfs:label "historisk anmärkning"@sv;
+   rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core>;
+   rdfs:subPropertyOf skos:note;
+   skos:definition "Information om tidigare status/användning/innebörd av ett begrepp."@sv .
+
+skos:member a owl:ObjectProperty,
+     rdf:Property;
+   rdfs:label "har medlem"@sv;
+   rdfs:domain skos:Collection;
+   rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core>;
+   rdfs:range [ a owl:Class;
+     owl:unionOf (skos:Concept skos:Collection)];
+   skos:definition "kopplar en samling till en medlem."@sv .
+
+skos:memberList a owl:ObjectProperty,
+     owl:FunctionalProperty,
+     rdf:Property;
+   rdfs:label "har medlemsförteckning"@sv;
+   rdfs:comment "För alla poster i listan som pekas ut i skos:memberList gäller att de även är värde för egenskapen skos:member."@sv;
+   rdfs:domain skos:OrderedCollection;
+   rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core>;
+   rdfs:range rdf:List;
+   skos:definition "Kopplar en ordnad samling begrepp till den RDF-lista som innehåller medlemmarna."@sv .
+
+skos:notation a owl:DatatypeProperty,
+     rdf:Property;
+   rdfs:label "identifierare"@sv;
+   rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core>;
+   skos:scopeNote "Vanligen används skos:notation i form av en typed literal som objekt i en trippel."@sv .
+
+skos:prefLabel a owl:AnnotationProperty,
+     rdf:Property;
+   rdfs:label "föredragen term"@sv;
+   rdfs:comment "En resurs har maximalt en skos:prefLabel per språk och en skos:prefLabel utan språkangivelse."@sv,
+     "Omfattningen av skos:prefLabel är klassen RDF plain literals."@sv,
+     "skos:prefLabel, skos:altLabel och skos:hiddenLabel är parvis åtskilda egenskaper."@sv;
+   rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core>;
+   rdfs:subPropertyOf rdfs:label;
+   skos:definition "Den föredragna termen för en resurs på ett visst språk."@sv .
+
+skos:relatedMatch a owl:ObjectProperty,
+     owl:SymmetricProperty,
+     rdf:Property;
+   rdfs:label "har relaterat motsvarande begrepp"@sv;
+   rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core>;
+   rdfs:subPropertyOf skos:mappingRelation,
+     skos:related;
+   skos:definition "skos:relatedMatch används för att uttrycka en associativ begreppsrelation mellan begrepp som ingår i olika begreppsmodeller."@sv .
+
+skos:OrderedCollection a owl:Class;
+   rdfs:label "Ordnad samling"@sv;
+   rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core>;
+   rdfs:subClassOf skos:Collection;
+   skos:definition "En ordnat samling begrepp där både ordningen och grupperingen av begrepp har betydelse."@sv;
+   skos:scopeNote "En ordnad samling kan användas ihop med semantiska relationer när man vill att en samling begrepp ska presenteras i en viss ordning, eventuellt tillsammans med presentation under en \"nodetikett\"."@sv .
+
+skos:broadMatch a owl:ObjectProperty,
+     rdf:Property;
+   rdfs:label "har överordnat motsvarande begrepp"@sv;
+   rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core>;
+   rdfs:subPropertyOf skos:mappingRelation,
+     skos:broader;
+   owl:inverseOf skos:narrowMatch;
+   skos:definition "skos:broadMatch används för att hierarkiskt relatera begrepp som ingår i olika begreppsmodeller."@sv .
+
+skos:closeMatch a owl:ObjectProperty,
+     owl:SymmetricProperty,
+     rdf:Property;
+   rdfs:label "har snarlikt motsvarande begrepp"@sv;
+   rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core>;
+   rdfs:subPropertyOf skos:mappingRelation;
+   skos:definition "skos:closeMatch används för att koppla samman två begrepp som är tillräckligt lika för att kunna användas på liknande sätt i en del informationsinsamlingssystem. För att undvika risken med \"aggregarade fel\" i situationer där kopplingar skapats mellan begrepp i flera begreppsmodeller så är skos:closeMatch inte en transitiv egenskap."@sv .
+
+skos:hasTopConcept a owl:ObjectProperty,
+     rdf:Property;
+   rdfs:label "har huvudbegrepp"@sv;
+   rdfs:domain skos:ConceptScheme;
+   rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core>;
+   rdfs:range skos:Concept;
+   owl:inverseOf skos:topConceptOf;
+   skos:definition "Kopplar en begreppsmodell till ett begrepp som är överst i hierarkin i modellen."@sv .
+
+skos:inScheme a owl:ObjectProperty,
+     rdf:Property;
+   rdfs:label "ingår i modell"@sv;
+   rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core>;
+   rdfs:range skos:ConceptScheme;
+   skos:definition "Kopplar en resurs (t.ex. ett begrepp) till en begreppsmodell i vilken den ingår."@sv;
+   skos:scopeNote "Ett begrepp kan ingå i flera begreppsmodeller."@sv .
+
+skos:narrowMatch a owl:ObjectProperty,
+     rdf:Property;
+   rdfs:label "har underordnat motsvarande begrepp"@sv;
+   rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core>;
+   rdfs:subPropertyOf skos:mappingRelation,
+     skos:narrower;
+   owl:inverseOf skos:broadMatch;
+   skos:definition "skos:narrowMatch används för att hierarkiskt relatera begrepp som ingår i olika begreppsmodeller."@sv .
+
+skos:related a owl:ObjectProperty,
+     owl:SymmetricProperty,
+     rdf:Property;
+   rdfs:label "är relaterat med"@sv;
+   rdfs:comment "skos:related är åtskilt från skos:broaderTransitive"@sv;
+   rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core>;
+   rdfs:subPropertyOf skos:semanticRelation;
+   skos:definition "Ett begrepp till vilket det finns en associativ begreppsrelation."@sv .
+
+skos:topConceptOf a owl:ObjectProperty,
+     rdf:Property;
+   rdfs:label "är huvudbegrepp i modellen"@sv;
+   rdfs:domain skos:Concept;
+   rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core>;
+   rdfs:range skos:ConceptScheme;
+   rdfs:subPropertyOf skos:inScheme;
+   owl:inverseOf skos:hasTopConcept;
+   skos:definition "Kopplar ett begrepp till en begreppsmodell för vilket begreppet är huvudbegrepp."@sv .
+
+skos:broader a owl:ObjectProperty,
+     rdf:Property;
+   rdfs:label "har överordnat begrepp"@sv;
+   rdfs:comment "Överordnade begrepp visas vanligen som föräldrar i ett begreppsdiagram (träd)."@sv;
+   rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core>;
+   rdfs:subPropertyOf skos:broaderTransitive;
+   owl:inverseOf skos:narrower;
+   skos:definition "Kopplar samman ett begrepp med ett annat som är mer generellt definierat."@sv;
+   skos:scopeNote "Vanligen används skos:broader enbart för direkta relationer mellan två begrepp."@sv .
+
+skos:broaderTransitive a owl:ObjectProperty,
+     owl:TransitiveProperty,
+     rdf:Property;
+   rdfs:label "har transitivt överordnat begrepp"@sv;
+   rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core>;
+   rdfs:subPropertyOf skos:semanticRelation;
+   owl:inverseOf skos:narrowerTransitive;
+   skos:definition "skos:broaderTransitive is a transitive superproperty of skos:broader.",
+     "skos:broaderTransitive är en transitiv överordnad egenskap för skos:broader."@sv;
+   skos:scopeNote "Vanligen används inte skos:broaderTransitive för påståenden. Istället kan dessa egenskaper användas för att härleda trasitiva egenskaper för en hierarkisk relation, t.ex. vid implementation av frågealgoritmer i sökapplikationer."@sv .
+
+skos:example a owl:AnnotationProperty,
+     rdf:Property;
+   rdfs:label "exempel"@sv;
+   rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core>;
+   rdfs:subPropertyOf skos:note;
+   skos:definition "Exempel på hur ett begrepp kan användas."@sv .
+
+skos:narrower a owl:ObjectProperty,
+     rdf:Property;
+   rdfs:label "har underordnat begrepp"@sv;
+   rdfs:comment "Underordnade begrepp visas vanligen som barn i ett begreppsdiagram (träd)."@sv;
+   rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core>;
+   rdfs:subPropertyOf skos:narrowerTransitive;
+   owl:inverseOf skos:broader;
+   skos:definition "Ett begrepp som har en mer specifik definition."@sv;
+   skos:scopeNote "Vanligtvis används skos:broader enbart för att uttrycka ett direkt hierarkiskt förhållande mellan två begrepp."@sv .
+
+skos:narrowerTransitive a owl:ObjectProperty,
+     owl:TransitiveProperty,
+     rdf:Property;
+   rdfs:label "har transitivt underordnat begrepp"@sv;
+   rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core>;
+   rdfs:subPropertyOf skos:semanticRelation;
+   owl:inverseOf skos:broaderTransitive;
+   skos:definition "skos:narrowerTransitive is a transitive superproperty of skos:narrower.",
+     "skos:narrowerTransitive är en transitiv överordnad egenskap för skos:narrower.";
+   skos:scopeNote "Vanligen används inte skos:narrowerTransitive för påståenden. Istället kan dessa egenskaper användas för att härleda trasitiva egenskaper för en hierarkisk relation, t.ex. vid implementation av frågealgoritmer i sökapplikationer."@sv .
+
+skos:Collection a owl:Class;
+   rdfs:label "Samling"@sv;
+   rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core>;
+   owl:disjointWith skos:Concept,
+     skos:ConceptScheme;
+   skos:definition "En meningsfull samling av begrepp."@sv;
+   skos:scopeNote "Namngivna samlingar kan användas ihop med semantiska relationer som t.ex. skos:narrower när man vill presentera en uppsättning begrepp under en \"nodetikett\" i en hierarki."@sv .
+
+skos:ConceptScheme a owl:Class;
+   rdfs:label "begreppsmodell"@sv;
+   rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core>;
+   owl:disjointWith skos:Concept;
+   skos:definition "En uppsättning begrepp som även kan innehålla beskrivningar av deras inbördes relationer."@sv;
+   skos:example "Tesaurusar, klassifikationsscheman, ämnesordsförteckningar, taxonomier, folksonomier och andra typer av kontrollerade ordlistor är samtliga exempel på begrepssystem. Begreppsmodeller kan även vara ingå i ordlistor och terminologier."@sv;
+   skos:scopeNote "En begreppsmodell kan även designas så att den innehåller begrepp från andra källor."@sv .
+
+skos:mappingRelation a owl:ObjectProperty,
+     rdf:Property;
+   rdfs:label "ingår i en jämförande relation till"@sv;
+   rdfs:comment "Denna typ av relation speglar semantiska relationer och datamodellen nedan är liknar den för semantiska relationer (undantaget skos:exactMatch). En särskild vokabulär har skapats för att koppla samman begrepp vid jämförelser av deras innebörd med syfte att skilja på jämförelser inom en begreppsmodell och mellan begrepp i olika begreppsmodeller. Detta användningssätt krävs dock inte i SKOS datamodell utan bygger på praxis."@sv;
+   rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core>;
+   rdfs:subPropertyOf skos:semanticRelation;
+   skos:definition "Kopplar samman två begrepp med likartad innebörd från olika begreppsmodeller."@sv .
+
+skos:semanticRelation a owl:ObjectProperty,
+     rdf:Property;
+   rdfs:label "är semantiskt relaterat till"@sv;
+   rdfs:domain skos:Concept;
+   rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core>;
+   rdfs:range skos:Concept;
+   skos:definition "Kopplar ihop två begrepp som har en meningsfull relation."@sv;
+   skos:scopeNote "Denna egenskap ska inte användas direkt. Den är en abstrakt egenskap för de egenskaper som beskriver inbördes förhållanden mellan begrepp."@sv .
+
+skos:note a owl:AnnotationProperty,
+     rdf:Property;
+   rdfs:label "anmärkning"@sv;
+   rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core>;
+   skos:definition "En allmän anmärkning i vilket syfte som helst."@sv;
+   skos:scopeNote "Denna egenskap kan användas direkt eller som en överordnad egenskap för mer specifika anmärkningstyper."@sv .
+
+skos:Concept a owl:Class;
+   rdfs:label "Begrepp"@sv;
+   rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core>;
+   skos:definition "En abstrakt idé eller föreställning om något. Kunskapsenhet."@sv .
+
+skos:scopeNote a owl:AnnotationProperty,
+     rdf:Property;
+   rdfs:label "användningsanmärkning"@sv;
+   rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core>;
+   rdfs:subPropertyOf skos:note;
+   skos:definition "Information som förtydligar betyldelsen av och/eller användningen av ett begrepp."@sv .
+
+<http://www.w3.org/2004/02/skos/core> a owl:Ontology;
+   dc:title "SKOS begreppsmodell"@sv;
+   dc:contributor "Dave Beckett",
+     "Nikki Rogers",
+     "Participants in W3C's Semantic Web Deployment Working Group.";
+   dc:creator "Alistair Miles",
+     "Sean Bechhofer";
+   dc:description "En RDF-vokabulär för att beskriva grundläggande struktur och innehåll i begreppsmodeller såsom tesaurusar, klassifikationsscheman, ämnesordsförteckningar, taxonomier, folksonomier och andra typer av kontrollerade ordlistor. Omfattar även sådana begreppsmodeller som finns inlemmade i ordlistor och terminologier."@sv;
+   rdfs:seeAlso <http://www.w3.org/TR/skos-reference/> .
+
+skos:definition a owl:AnnotationProperty,
+     rdf:Property;
+   rdfs:label "definition"@sv;
+   rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core>;
+   rdfs:subPropertyOf skos:note;
+   skos:definition "En beskrivning eller förklaring av ett begrepps innebörd."@sv .
