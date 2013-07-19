@@ -44,14 +44,14 @@
   -->
 
 	<rdf:Description rdf:about="">
-		<dc:title xml:lang="sv">SKOS Core-vokabulär</dc:title>
+		<dc:title xml:lang="sv">SKOS begreppsmodell</dc:title>
     <dc:description xml:lang="sv">En RDF-vokabulär för att beskriva grundläggande struktur och innehåll i begreppsmodeller såsom tesaurusar, klassifikationsscheman, ämnesordsförteckningar, taxonomier, folksonomier och andra typer av kontrollerade ordlistor. Omfattar även sådana begreppsmodeller som finns inlemmade i ordlistor och terminologier.</dc:description>
 	</rdf:Description>
 
   <rdfs:Class rdf:ID="ConceptScheme">
     <rdfs:label xml:lang="sv">begreppsmodell</rdfs:label>
-    <skos:definition xml:lang="sv">En uppsättning begrepp som även kan innehålla beskrivningar av deras inbörde relationer.</skos:definition>
-    <rdfs:comment xml:lang="sv">Tesaurusar, klassifikationsscheman, ämnesordsförteckningar, taxonomier, folksonomier och andra typer av kontrollerade ordlistor är samtliga exempel på begrepssystem. Begreppsmodeller kan även vara inlemmade i ordlistor och terminologier.</rdfs:comment>
+    <skos:definition xml:lang="sv">En uppsättning begrepp som även kan innehålla beskrivningar av deras inbördes relationer.</skos:definition>
+    <rdfs:comment xml:lang="sv">Tesaurusar, klassifikationsscheman, ämnesordsförteckningar, taxonomier, folksonomier och andra typer av kontrollerade ordlistor är samtliga exempel på begrepssystem. Begreppsmodeller kan även vara ingå i ordlistor och terminologier.</rdfs:comment>
     <rdfs:comment xml:lang="sv">En begreppsmodell kan även designas så att den innehåller begrepp från andra källor.</rdfs:comment>
   </rdfs:Class>
 
@@ -62,55 +62,54 @@
 
   <rdf:Property rdf:ID="hasTopConcept">
     <rdfs:label xml:lang="sv">har huvudbegrepp</rdfs:label>
-    <skos:definition xml:lang="sv">Huvudsakligt begrepp i en begreppsmodell.</skos:definition>
+    <skos:definition xml:lang="sv">Kopplar en begreppsmodell till ett begrepp som är överst i hierarkin i modellen.</skos:definition>
+  </rdf:Property>
+
+  <rdf:Property rdf:ID="topConceptOf">
+    <rdfs:label xml:lang="sv">är huvudbegrepp i modellen</rdfs:label>
+    <skos:definition xml:lang="sv">Kopplar ett begrepp till en begreppsmodell för vilket begreppet är huvudbegrepp.</skos:definition>
   </rdf:Property>
 
 	<!-- Basic properties of concepts -->
 
   <rdf:Property rdf:ID="inScheme">
     <rdfs:label xml:lang="sv">ingår i modell</rdfs:label>
-    <skos:definition xml:lang="sv">En begreppsmodell i vilket begreppet ingår.</skos:definition>
+    <skos:definition xml:lang="sv">Kopplar en resurs (t.ex. ett begrepp) till en begreppsmodell i vilken den ingår.</skos:definition>
     <rdfs:comment xml:lang="sv">Ett begrepp kan ingå i flera begreppsmodeller.</rdfs:comment>
   </rdf:Property>
 
   <rdf:Property rdf:ID="prefLabel">
     <rdfs:label xml:lang="sv">föredragen term</rdfs:label>
     <skos:definition xml:lang="sv">Den föredragna termen för en resurs på ett enskilt språk.</skos:definition>
-    <rdfs:comment xml:lang="sv">Två begrepp i samma begreppsmodell får inte ha samma värde i skos:prefLabel för ett enskilt språk.</rdfs:comment>
+    <rdfs:comment xml:lang="sv">En resurs har maximalt en skos:prefLabel per språk och en skos:prefLabel utan språkangivelse.</rdfs:comment>
+    <rdfs:comment xml:lang="sv">Omfattningen av skos:prefLabel är klassen RDF plain literals.</rdfs:comment>
+    <rdfs:comment xml:lang="sv">skos:prefLabel, skos:altLabel och skos:hiddenLabel är parvis åtskilda egenskaper.</rdfs:comment>
   </rdf:Property>
 
   <rdf:Property rdf:ID="altLabel">
     <rdfs:label xml:lang="sv">alternativ term</rdfs:label>
     <skos:definition xml:lang="sv">En alternativ term för en resurs.</skos:definition>
     <rdfs:comment xml:lang="sv">Akronymer, förkortningar, alternativa stavningar och oregelbundna plural- och singularformer kan ingå bland alternativa termer för ett begrepp. Felstavningar anges vanligen som dolda termer (se skos:hiddenLabel).</rdfs:comment>
+    <rdfs:comment xml:lang="sv">Omfattningen av skos:altLabel är klassen RDF plain literals.</rdfs:comment>
+    <rdfs:comment xml:lang="sv">skos:prefLabel, skos:altLabel och skos:hiddenLabel är parvis åtskilda egenskaper.</rdfs:comment>
   </rdf:Property>
 
   <rdf:Property rdf:ID="hiddenLabel">
     <rdfs:label xml:lang="sv">dold term</rdfs:label>
-    <skos:definition xml:lang="sv">En term som bör döljas när man visar en resurs men som ska ingå som underlag för fritextsökningar.</skos:definition>
+    <skos:definition xml:lang="sv">En term som bör döljas när man presenterar en resurs men som ska ingå som underlag för fritextsökningar.</skos:definition>
+    <rdfs:comment xml:lang="sv">Omfattningen av skos:altLabel är klassen RDF plain literals.</rdfs:comment>
+    <rdfs:comment xml:lang="sv">skos:prefLabel, skos:altLabel och skos:hiddenLabel är parvis åtskilda egenskaper.</rdfs:comment>
   </rdf:Property>
 
-  <rdf:Property rdf:ID="symbol">
-    <rdfs:label xml:lang="sv">symbol</rdfs:label>
-    <skos:definition xml:lang="sv">En bild som utgör en icke-språklig begreppsrepresentation för resursen.</skos:definition>
-    <rdfs:comment xml:lang="sv">Denna egenskap motsvarar ungefär rdfs:label men används för att märka resurser med bilder som är möjliga att hämta snarare än RDF-literaler.</rdfs:comment>
-  </rdf:Property>
-
-  <rdf:Property rdf:ID="prefSymbol">
-    <rdfs:label xml:lang="sv">föredragen symbol</rdfs:label>
-    <skos:definition xml:lang="sv">Den föredragna symbolen för en resurs.</skos:definition>
-    <rdfs:comment xml:lang="sv">Två begrepp i samma begreppsmodell får inte ha samma värde i skos:prefSymbol.</rdfs:comment>
-  </rdf:Property>
-
-  <rdf:Property rdf:ID="altSymbol">
-    <rdfs:label xml:lang="sv">alternativ symbol</rdfs:label>
-    <skos:definition xml:lang="sv">En alternativ symbol för en resurs.</skos:definition>
-    <skos:example rdf:resource="http://www.w3.org/2004/02/skos/core/examples/altSymbol.rdf.xml"/>
+  <rdf:Property rdf:ID="notation">
+    <rdfs:label xml:lang="sv">identifierare</rdfs:label>
+    <skos:definition xml:lang="en">En identifierare eller kod är en uppsättning tecken som t.ex. "T58.5" eller "303.4833" och används för att unikt identifiera ett begrepp i en begreppsmodell.</skos:definition>
+    <skos:scopeNote xml:lang="en">Vanligen används skos:notation i form av en typed literal som objekt i en trippel.</skos:scopeNote>
   </rdf:Property>
 
   <rdf:Property rdf:ID="semanticRelation">
-    <rdfs:label xml:lang="sv">semantiskt relaterat</rdfs:label>
-    <skos:definition xml:lang="sv">Ett relaterat begrepp.</skos:definition>
+    <rdfs:label xml:lang="sv">är semantiskt relaterat till</rdfs:label>
+    <skos:definition xml:lang="sv">Kopplar ihop två begrepp som har en meningsfull relation.</skos:definition>
     <rdfs:comment xml:lang="sv">Denna egenskap ska inte användas direkt. Den är en abstrakt egenskap för de egenskaper som beskriver inbördes förhållanden mellan begrepp.</rdfs:comment>
   </rdf:Property>
 
@@ -120,18 +119,36 @@
     <rdfs:label xml:lang="sv">har överordnat begrepp</rdfs:label>
     <skos:definition xml:lang="sv">Ett begrepp som är mer generiskt.</skos:definition>
     <rdfs:comment xml:lang="sv">Överordnade begrepp visas vanligen som föräldrar i ett begreppsdiagram (träd).</rdfs:comment>
+    <skos:scopeNote xml:lang="sv">Vanligen används skos:broader enbart för direkta relationer mellan två begrepp.</skos:scopeNote>
+
   </rdf:Property>
 
   <rdf:Property rdf:ID="narrower">
     <rdfs:label xml:lang="sv">har underordnat begrepp</rdfs:label>
     <skos:definition xml:lang="sv">Ett begrepp som har en mer specifik definition.</skos:definition>
+    <skos:scopeNote xml:lang="sv">  By convention, skos:broader is only used to assert an immediate (i.e. direct) hierarchical link between two conceptual resources.</skos:scopeNote>
     <rdfs:comment xml:lang="sv">Underordnade begrepp visas vanligen som barn i ett begreppsdiagram (träd).</rdfs:comment>
   </rdf:Property>
 
   <rdf:Property rdf:ID="related">
     <rdfs:label xml:lang="sv">relaterat till</rdfs:label>
     <skos:definition xml:lang="sv">Ett begrepp till vilket det finns en associativ begreppsrelation.</skos:definition>
+    <rdfs:comment xml:lang="sv">skos:related är åtskild från skos:broaderTransitive</rdfs:comment>
   </rdf:Property>
+
+  <rdf:Property rdf:ID="broaderTransitive">
+    <rdfs:label xml:lang="sv">har transitivt överordnat begrepp</rdfs:label>
+    <skos:definition xml:lang="sv">skos:broaderTransitive är en transitiv överordnad egenskap för skos:broader.</skos:definition>
+    <skos:scopeNote xml:lang="sv">Vanligen används inte skos:broaderTransitive för påståenden. Istället kan dessa egenskaper användas för att härleda trasitiva egenskaper för en hierarkisk relation, t.ex. vid implementation av frågealgoritmer i sökapplikationer.</skos:scopeNote>
+  </rdf:Property>
+
+
+  <rdf:Property rdf:ID="narrowerTransitive">
+    <rdfs:label xml:lang="sv">har transitivt underordnat begrepp</rdfs:label>
+    <skos:definition>skos:narrowerTransitive är en transitiv överordnad egenskap för skos:narrower.</skos:definition>
+    <skos:scopeNote xml:lang="en">Vanligen används inte skos:narrowerTransitive för påståenden. Istället kan dessa egenskaper användas för att härleda trasitiva egenskaper för en hierarkisk relation, t.ex. vid implementation av frågealgoritmer i sökapplikationer.</skos:scopeNote>
+  </rdf:Property>
+
 
   <rdf:Property rdf:ID="note">
     <rdfs:label xml:lang="sv">anmärkning</rdfs:label>
@@ -145,15 +162,15 @@
   </rdf:Property>
 
   <rdf:Property rdf:ID="scopeNote">
-    <rdfs:label xml:lang="sv">information om användning</rdfs:label>
-    <skos:definition xml:lang="sv">Uppgifter som förtydligar betyldelsen av ett begrepp.</skos:definition>
+    <rdfs:label xml:lang="sv">användningsanmärkning</rdfs:label>
+    <skos:definition xml:lang="sv">Information som förtydligar betyldelsen av och/eller användningen av ett begrepp.</skos:definition>
   </rdf:Property>
 
   <!-- Description of skos:example -->
 
   <rdf:Property rdf:ID="example">
     <rdfs:label xml:lang="sv">exempel</rdfs:label>
-    <skos:definition xml:lang="sv">Exempel på hur ett begrepp kan användas</skos:definition>
+    <skos:definition xml:lang="sv">Exempel på hur ett begrepp kan användas.</skos:definition>
   </rdf:Property>
 
   <!-- Description of skos:historyNote -->
@@ -175,7 +192,7 @@
 
   <rdfs:Class rdf:ID="Collection">
     <rdfs:label xml:lang="sv">Samling</rdfs:label>
-    <skos:definition xml:lang="sv">En meningsfull samling begrepp.</skos:definition>
+    <skos:definition xml:lang="sv">En meningsfull samling av begrepp.</skos:definition>
     <rdfs:comment xml:lang="sv">Namngivna samlingar kan användas ihop med semantiska relationer som t.ex. skos:narrower när man vill presentera en uppsättning begrepp under en "nodetikett" i en hierarki.</rdfs:comment>
   </rdfs:Class>
 
@@ -185,49 +202,54 @@
     <rdfs:comment xml:lang="sv">En ordnad samling kan användas ihop med semantiska relationer när man vill att en samling begrepp ska presenteras i en viss ordning, eventuellt tillsammans med presentation under en "nodetikett".</rdfs:comment>
   </rdfs:Class>
 
-  <rdfs:Class rdf:ID="CollectableProperty">
-    <rdfs:label xml:lang="sv">Samlande egenskap</rdfs:label>
-    <skos:definition xml:lang="sv">En egenskap som kan användas tillsamans med skos:Collection.</skos:definition>
-    <rdfs:comment xml:lang="sv">Följande gäller för denna egenskap: [(?x ?p ?c) (?c skos:member ?y) (?p rdf:type skos:CollectableProperty) medför att (?x ?p ?y)]</rdfs:comment>
-  </rdfs:Class>
-
   <rdf:Property rdf:ID="member">
-    <rdfs:label xml:lang="sv">medlem</rdfs:label>
-    <skos:definition xml:lang="sv">En medlem i en samling.</skos:definition>
+    <rdfs:label xml:lang="sv">har medlem</rdfs:label>
+    <skos:definition xml:lang="sv">kopplar en samling till en medlem.</skos:definition>
   </rdf:Property>
 
   <rdf:Property rdf:ID="memberList">
-    <rdfs:label xml:lang="sv">medlemsförteckning</rdfs:label>
-    <skos:definition xml:lang="sv">En RDF-lista som innehåller medlemmarna i en ordnad samling.</skos:definition>
-    <rdfs:comment xml:lang="sv">Följande regel gäller för denna egenskap: [(?c skos:memberList ?l) elementOfList(?e,?l) medför att (?c skos:member ?e)]</rdfs:comment>
+    <rdfs:label xml:lang="sv">har medlemsförteckning</rdfs:label>
+    <skos:definition xml:lang="sv">Kopplar en ordnad samling begrepp till den RDF-lista som innehåller medlemmarna.</skos:definition>
   </rdf:Property>
 
-  <rdf:Property rdf:ID="subject">
-    <rdfs:label xml:lang="sv">har ämne</rdfs:label>
-    <skos:definition xml:lang="sv">Ett begrepp som är ämnet för resursen.</skos:definition>
-    <rdfs:comment xml:lang="sv">Följande regel kan appliceras för denna egenskap: [(?d skos:subject ?x)(?x skos:broader ?y) medför att (?d skos:subject ?y)]</rdfs:comment>
+  <rdf:Property rdf:ID="mappingRelation">
+    <rdfs:label xml:lang="sv">ingår i en jämförande relation till</rdfs:label>
+    <skos:definition xml:lang="sv">Kopplar samman två begrepp med likartad innebörd från olika begreppsmodeller.</skos:definition>
+    <rdfs:comment xml:lang="sv">Denna typ av relation speglar semantiska relationer och datamodellen nedan är liknar den för semantiska relationer (undantaget skos:exactMatch). En särskild vokabulär har skapats för att koppla samman begrepp vid jämförelser av deras innebörd med syfte att skilja på jämförelser inom en begreppsmodell och mellan begrepp i olika begreppsmodeller. Detta användningssätt krävs dock inte i SKOS datamodell utan bygger på praxis.</rdfs:comment>
   </rdf:Property>
 
-  <rdf:Property rdf:ID="isSubjectOf">
-    <rdfs:label xml:lang="sv">är ämnet för</rdfs:label>
-    <skos:definition xml:lang="sv">En resurs för vilken begreppet är ämnet.</skos:definition>
-  </rdf:Property>
 
-  <rdf:Property rdf:ID="primarySubject">
-    <rdfs:label xml:lang="sv">har huvudsakligt ämne</rdfs:label>
-    <skos:definition xml:lang="sv">Ett begrepp som är det huvudsakliga ämnet för resursen.</skos:definition>
-    <rdfs:comment xml:lang="sv">En resurs kan bara ha ett huvudsakligt ämne per begreppsmodell.</rdfs:comment>
-  </rdf:Property>
+  <rdf:Property rdf:ID="broadMatch">
+    <rdfs:label xml:lang="sv">har överordnat begrepp</rdfs:label>
+    <skos:definition xml:lang="sv">skos:broadMatch används för att hierarkiskt relatera begrepp som ingår i olika begreppsmodeller.</skos:definition>
+  </rdf:Description>
 
-  <rdf:Property rdf:ID="isPrimarySubjectOf">
-    <rdfs:label xml:lang="sv">är huvudsakligt ämne för</rdfs:label>
-    <skos:definition xml:lang="sv">En resurs för vilken begreppet är huvudsakligt ämne.</skos:definition>
-  </rdf:Property>
 
-  <rdf:Property rdf:ID="subjectIndicator">
-    <rdfs:label xml:lang="sv">ämnesangivare</rdfs:label>
-    <skos:definition xml:lang="sv">En ämnesangivare för ett begrepp. [Begreppet "ämnesangivare" definieras här med hänvisning till den senaste definitionen från OASIS Published Subjects Technical Committee.]</skos:definition>
-    <rdfs:comment xml:lang="sv">Denna egenskap gör det möjligt att använda ämnesagnivare för begrepssidentifiering istället för eller utöver direkt tildelade URI:er.</rdfs:comment>
-  </rdf:Property>
+  <rdf:Property rdf:ID="narrowMatch">
+    <rdfs:label xml:lang="sv">har underordnat begrepp</rdfs:label>
+    <skos:definition xml:lang="sv">skos:narrowMatch används för att hierarkiskt relatera begrepp som ingår i olika begreppsmodeller.</skos:definition>
+  </rdf:Description>
+
+  <rdf:Property rdf:ID="relatedMatch">
+    <rdfs:label xml:lang="sv">har relaterat jämförbart begrepp</rdfs:label>
+    <skos:definition xml:lang="sv">skos:relatedMatch används för att uttrycka en associativ begreppsrelation mellan begrepp som ingår i olika begreppsmodeller.</skos:definition>
+  </rdf:Description>
+
+
+  <rdf:Property rdf:ID="exactMatch">
+    <rdfs:label xml:lang="sv">har exakt matchande begrepp</rdfs:label>
+    <skos:definition xml:lang="sv">skos:exactMatch används för att koppla samman två begrepp där båda begreppen med största sannolikhet kan användas på samma sätt i informationsinsamlingssystem. skos:exactMatch är en transitiv egenskap och är en underliggande egenskap till skos:closeMatch.</skos:definition>
+  </rdf:Description>
+
+
+  <rdf:Property rdf:ID="closeMatch">
+    <rdfs:label xml:lang="sv">har snarlikt begrepp</rdfs:label>
+    <skos:definition xml:lang="sv">skos:closeMatch används för att koppla samman två begrepp som är tillräckligt lika för att kunna användas på liknande sätt i en del informationsinsamlingssystem. För att undvika risken med "aggregarade fel" i situationer där kopplingar skapats mellan begrepp i flera begreppsmodeller så är skos:closeMatch inte en transitiv egenskap.</skos:definition>
+  </rdf:Description>
+
+
+
+
+
 
 </rdf:RDF>
