@@ -382,7 +382,7 @@
     <skos:definition>skos:broaderTransitive is a transitive superproperty of skos:broader.</skos:definition>
     <skos:definition xml:lang="sv">skos:broaderTransitive är en transitiv överordnad egenskap för skos:broader.</skos:definition>
     <skos:scopeNote xml:lang="en">By convention, skos:broaderTransitive is not used to make assertions. Rather, the properties can be used to draw inferences about the transitive closure of the hierarchical relation, which is useful e.g. when implementing a simple query expansion algorithm in a search application.</skos:scopeNote>
-    <skos:scopeNote xml:lang="sv">Vanligen används inte skos:broaderTransitive för påståenden. Istället kan dessa egenskaper användas för att härleda trasitiva egenskaper för en hierarkisk relation, t.ex. vid implementation av frågealgoritmer i sökapplikationer.</skos:scopeNote>
+    <skos:scopeNote xml:lang="sv">Vanligen används inte skos:broaderTransitive för påståenden. Istället kan dessa egenskaper användas för att härleda transitiva egenskaper för en hierarkisk relation, t.ex. vid implementation av frågealgoritmer i sökapplikationer.</skos:scopeNote>
     <!-- S18 -->
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <!-- S21 -->
@@ -401,7 +401,7 @@
     <skos:definition>skos:narrowerTransitive is a transitive superproperty of skos:narrower.</skos:definition>
     <skos:definition xml:lang="sv">skos:narrowerTransitive är en transitiv överordnad egenskap för skos:narrower.</skos:definition>
     <skos:scopeNote xml:lang="en">By convention, skos:narrowerTransitive is not used to make assertions. Rather, the properties can be used to draw inferences about the transitive closure of the hierarchical relation, which is useful e.g. when implementing a simple query expansion algorithm in a search application.</skos:scopeNote>
-    <skos:scopeNote xml:lang="sv">Vanligen används inte skos:narrowerTransitive för påståenden. Istället kan dessa egenskaper användas för att härleda trasitiva egenskaper för en hierarkisk relation, t.ex. vid implementation av frågealgoritmer i sökapplikationer.</skos:scopeNote>
+    <skos:scopeNote xml:lang="sv">Vanligen används inte skos:narrowerTransitive för påståenden. Istället kan dessa egenskaper användas för att härleda transitiva egenskaper för en hierarkisk relation, t.ex. vid implementation av frågealgoritmer i sökapplikationer.</skos:scopeNote>
     <!-- S18 -->
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <!-- S21 -->
