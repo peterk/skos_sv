@@ -545,7 +545,7 @@
     <rdfs:label xml:lang="sv">har snarlikt motsvarande begrepp</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
     <skos:definition xml:lang="en">skos:closeMatch is used to link two concepts that are sufficiently similar that they can be used interchangeably in some information retrieval applications. In order to avoid the possibility of "compound errors" when combining mappings across more than two concept schemes, skos:closeMatch is not declared to be a transitive property.</skos:definition>
-    <skos:definition xml:lang="sv">skos:closeMatch används för att koppla samman två begrepp som är tillräckligt lika för att kunna användas på liknande sätt i en del informationsinsamlingssystem. För att undvika risken med "aggregarade fel" i situationer där kopplingar skapats mellan begrepp i flera begreppsmodeller så är skos:closeMatch inte en transitiv egenskap.</skos:definition>
+    <skos:definition xml:lang="sv">skos:closeMatch används för att koppla samman två begrepp som är tillräckligt lika för att kunna användas på liknande sätt i en del informationsinsamlingssystem. För att undvika risken med "aggregerade fel" i situationer där kopplingar skapats mellan begrepp i flera begreppsmodeller så är skos:closeMatch inte en transitiv egenskap.</skos:definition>
     <!-- S38 -->
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <!-- S40 -->
