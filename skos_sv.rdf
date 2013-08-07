@@ -526,7 +526,7 @@
     <rdfs:label xml:lang="sv">har exakt motsvarande begrepp</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
     <skos:definition xml:lang="en">skos:exactMatch is used to link two concepts, indicating a high degree of confidence that the concepts can be used interchangeably across a wide range of information retrieval applications. skos:exactMatch is a transitive property, and is a sub-property of skos:closeMatch.</skos:definition>
-    <skos:definition xml:lang="sv">skos:exactMatch används för att koppla samman två begrepp där båda begreppen med största sannolikhet kan användas på samma sätt i informationsinsamlingssystem. skos:exactMatch är en transitiv egenskap och är en underliggande egenskap till skos:closeMatch.</skos:definition>
+    <skos:definition xml:lang="sv">skos:exactMatch används för att koppla samman två begrepp där båda begreppen med största sannolikhet kan användas på samma sätt i informationsinsamlingssystem. skos:exactMatch är en transitiv egenskap och är en underordnad egenskap till skos:closeMatch.</skos:definition>
     <!-- S38 -->
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <!-- S42 -->
