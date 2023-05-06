@@ -398,7 +398,7 @@
     <rdfs:label xml:lang="en">has narrower transitive</rdfs:label>
     <rdfs:label xml:lang="sv">har transitivt underordnat begrepp</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
-    <skos:definition>skos:narrowerTransitive is a transitive superproperty of skos:narrower.</skos:definition>
+    <skos:definition xml:lang="en">skos:narrowerTransitive is a transitive superproperty of skos:narrower.</skos:definition>
     <skos:definition xml:lang="sv">skos:narrowerTransitive är en transitiv överordnad egenskap för skos:narrower.</skos:definition>
     <skos:scopeNote xml:lang="en">By convention, skos:narrowerTransitive is not used to make assertions. Rather, the properties can be used to draw inferences about the transitive closure of the hierarchical relation, which is useful e.g. when implementing a simple query expansion algorithm in a search application.</skos:scopeNote>
     <skos:scopeNote xml:lang="sv">Vanligen används inte skos:narrowerTransitive för påståenden. Istället kan dessa egenskaper användas för att härleda transitiva egenskaper för en hierarkisk relation, t.ex. vid implementation av frågealgoritmer i sökapplikationer.</skos:scopeNote>
